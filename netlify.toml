@@ -1,0 +1,63 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/petrol-transport-inc-benefits"
+  to = "/petrol-transport-inc-benefits/"
+  status = 301
+
+[[redirects]]
+  from = "/petroleum-transport-bakersfield"
+  to = "/petroleum-transport-bakersfield/"
+  status = 301
+
+[[redirects]]
+  from = "/crude-oil-transport-bakersfield"
+  to = "/crude-oil-transport-bakersfield/"
+  status = 301
+
+[[redirects]]
+  from = "/crude-oil-transportation-california"
+  to = "/crude-oil-transportation-california/"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas"
+  to = "/service-areas/"
+  status = 301
+
+[[redirects]]
+  from = "/resources"
+  to = "/resources/"
+  status = 301
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about-us/"
+  status = 301
+
+[[redirects]]
+  from = "/careers"
+  to = "/careers/"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact-us/"
+  status = 301
+
+[[redirects]]
+  from = "/request-transportation"
+  to = "/request-transportation/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy/"
+  status = 301
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you/"
+  status = 301
