@@ -478,6 +478,33 @@ textarea { min-height: 150px; resize: vertical; }
   .callout h2 { font-size: 32px; }
 }
 
+/* Heritage story layout */
+.heritage-story { max-width: 820px; margin: 0 auto; }
+.heritage-chapter { margin-bottom: 64px; }
+.heritage-chapter:last-child { margin-bottom: 0; }
+.heritage-chapter h2 { font-size: 34px; margin-bottom: 24px; line-height: 1.2; }
+.heritage-chapter p { font-size: 17px; line-height: 1.8; color: var(--steel); margin-bottom: 16px; }
+.heritage-photo { margin: 40px 0; border-radius: var(--radius); overflow: hidden; }
+.heritage-photo img { width: 100%; height: auto; }
+.heritage-quote {
+  margin: 32px 0;
+  padding: 24px 32px;
+  border-left: 4px solid var(--red);
+  background: var(--light);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--navy);
+}
+.heritage-quote cite { display: block; margin-top: 12px; font-style: normal; font-weight: 700; font-size: 15px; color: var(--steel); }
+.heritage-quote-large { font-size: 22px; padding: 32px 40px; }
+@media (max-width: 600px) {
+  .heritage-chapter h2 { font-size: 26px; }
+  .heritage-quote { padding: 20px 24px; font-size: 16px; }
+  .heritage-quote-large { font-size: 18px; padding: 24px 28px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
