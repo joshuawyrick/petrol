@@ -478,31 +478,88 @@ textarea { min-height: 150px; resize: vertical; }
   .callout h2 { font-size: 32px; }
 }
 
-/* Heritage story layout */
-.heritage-story { max-width: 820px; margin: 0 auto; }
-.heritage-chapter { margin-bottom: 64px; }
-.heritage-chapter:last-child { margin-bottom: 0; }
-.heritage-chapter h2 { font-size: 34px; margin-bottom: 24px; line-height: 1.2; }
-.heritage-chapter p { font-size: 17px; line-height: 1.8; color: var(--steel); margin-bottom: 16px; }
-.heritage-photo { margin: 40px 0; border-radius: var(--radius); overflow: hidden; }
-.heritage-photo img { width: 100%; height: auto; }
-.heritage-quote {
-  margin: 32px 0;
-  padding: 24px 32px;
-  border-left: 4px solid var(--red);
-  background: var(--light);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  font-size: 18px;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--navy);
+/* Heritage article (About page) */
+.heritage-article {
+  --serif: "EB Garamond", Garamond, "Times New Roman", serif;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+  color: var(--ink);
 }
-.heritage-quote cite { display: block; margin-top: 12px; font-style: normal; font-weight: 700; font-size: 15px; color: var(--steel); }
-.heritage-quote-large { font-size: 22px; padding: 32px 40px; }
-@media (max-width: 600px) {
-  .heritage-chapter h2 { font-size: 26px; }
-  .heritage-quote { padding: 20px 24px; font-size: 16px; }
-  .heritage-quote-large { font-size: 18px; padding: 24px 28px; }
+.heritage-kicker {
+  margin: 0 0 40px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--navy-deep);
+  line-height: 1.2;
+}
+.heritage-opening {
+  display: grid;
+  grid-template-columns: 1fr 2.1fr;
+  gap: 32px;
+  align-items: center;
+}
+.heritage-title-block { text-align: right; }
+.heritage-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variant: small-caps;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: .02em;
+  color: var(--navy-deep);
+}
+.heritage-figure { margin: 0; overflow: hidden; background: var(--light); }
+.heritage-figure img { width: 100%; height: auto; transition: transform .8s ease; }
+.heritage-figure:hover img { transform: scale(1.03); }
+
+.heritage-row { display: grid; gap: 40px; margin-top: 40px; align-items: start; }
+.heritage-row-intro { grid-template-columns: 1fr 2.1fr; gap: 32px; }
+.heritage-row-left-photo { grid-template-columns: 1.55fr 1fr; }
+.heritage-row-right-photo { grid-template-columns: 1fr 1fr; }
+.heritage-side { display: grid; gap: 24px; }
+
+.heritage-caption { color: var(--steel); font-family: var(--serif); font-size: 15px; line-height: 1.5; }
+.heritage-caption p { margin: 8px 0 0; }
+.heritage-pump { width: 32px; height: 28px; color: var(--navy-deep); }
+
+.heritage-columns { column-count: 2; column-gap: 32px; }
+.heritage-columns p, .heritage-text p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  hyphens: auto;
+  text-indent: 1.5em;
+}
+.heritage-text { column-gap: 32px; }
+
+.heritage-figure-closing { width: 78%; margin: 48px 0 0 auto; }
+.heritage-folio {
+  margin: 24px 0 0;
+  text-align: right;
+  font-size: 13px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+@media (max-width: 900px) {
+  .heritage-article { padding: 32px 20px 56px; }
+  .heritage-kicker { font-size: 20px; margin-bottom: 24px; }
+  .heritage-opening, .heritage-row-intro, .heritage-row-left-photo, .heritage-row-right-photo { grid-template-columns: 1fr; gap: 24px; }
+  .heritage-row { margin-top: 24px; }
+  .heritage-title-block { text-align: left; }
+  .heritage-title { font-size: 36px; }
+  .heritage-opening .heritage-figure-lead { order: 2; }
+  .heritage-columns { column-count: 1; }
+  .heritage-columns p, .heritage-text p { text-align: left; hyphens: manual; font-size: 17px; line-height: 1.6; }
+  .heritage-figure-closing { width: 100%; margin-top: 32px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
