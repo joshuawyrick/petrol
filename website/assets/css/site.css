@@ -114,6 +114,9 @@ button, input, textarea, select { font: inherit; }
 .btn-outline:hover { background: rgba(255,255,255,.10); }
 .btn-outline-dark { background: white; border-color: var(--navy); color: var(--navy); }
 .btn-outline-dark:hover { background: var(--ice); }
+.prose a.btn-primary { color: white; }
+.prose a.btn-outline { color: white; }
+.prose a.btn-outline-dark { color: var(--navy); }
 .mobile-toggle {
   display: none;
   margin-left: auto;
