@@ -257,6 +257,12 @@ button, input, textarea, select { font: inherit; }
 .container > .lead-copy { max-width: 760px; }
 .container > .btn { display: flex; width: fit-content; margin: 28px auto 0; }
 .home-solutions .container > h2 { text-transform: uppercase; }
+.home-faq { background: var(--light); }
+.faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+.faq-grid details { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: 0 10px 30px rgba(0,19,64,.05); }
+.faq-grid summary { color: var(--navy); cursor: pointer; font-size: 17px; font-weight: 800; line-height: 1.35; }
+.faq-grid details p { margin: 16px 0 0; color: var(--steel); font-size: 15px; }
+.faq-grid details a { color: var(--red); font-weight: 800; }
 .lead-copy { font-size: 18px; line-height: 1.75; }
 .media-card {
   border-radius: var(--radius);
@@ -468,7 +474,7 @@ textarea { min-height: 150px; resize: vertical; }
   .section { padding: 64px 20px; }
   .split, .contact-grid, .page-hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .page-hero-inner { padding: 56px 20px; }
-  .cards, .area-grid, .benefit-grid, .article-grid, .solution-grid { grid-template-columns: 1fr; }
+  .cards, .area-grid, .benefit-grid, .article-grid, .solution-grid, .faq-grid { grid-template-columns: 1fr; }
   .solution-grid { gap: 36px; margin-top: 40px; }
   .home-contact-grid { grid-template-columns: 1fr; gap: 18px; }
   .home-contact-grid > div, .home-contact-grid > div:first-child { min-height: 0; padding: 0; border-right: 0; }
