@@ -53,11 +53,11 @@ const notFound = `<!doctype html>
 <header class="site-header">
   <div class="nav-shell">
     <a class="brand" href="/" aria-label="Petrol Transport Inc. home"><img src="/assets/images/petrol-transport-logo.png" alt="Petrol Transport Inc." width="2172" height="724"></a>
-    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/petroleum-transport-bakersfield">Transportation</a><a href="/service-areas">Service Areas</a><a href="/about-us">About</a><a href="/careers">Careers</a><a href="/contact-us">Contact</a></nav>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/petroleum-transport-bakersfield">Transportation</a><a href="/service-areas">Service Areas</a><a href="/petroleum-transport-safety-suggestions">Safety</a><a href="/about-us">About</a><a href="/careers">Careers</a><a href="/contact-us">Contact</a></nav>
   </div>
 </header>
 <main id="main">
-<section class="page-hero"><div class="page-hero-inner"><div><p class="eyebrow">Error 404</p><h1>Page Not Found</h1><p>The page you are looking for may have been moved or no longer exists. Please use the navigation above or return to the homepage.</p><div class="hero-actions"><a class="btn btn-primary" href="/">Return Home</a><a class="btn btn-outline" href="tel:+16613936514">Call 661-393-6514</a></div></div></div></section>
+<section class="page-hero"><div class="page-hero-inner"><div><p class="eyebrow">Error 404</p><h1>Page Not Found</h1><p>The page you are looking for may have been moved or no longer exists. Please use the navigation above or return to the homepage.</p><div class="hero-actions"><a class="btn btn-primary" href="/">Return Home</a><a class="btn btn-outline" href="/request-transportation">Request Estimate</a><a class="btn btn-outline" href="tel:+16613936514">Call 661-393-6514</a></div></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="footer-grid">
