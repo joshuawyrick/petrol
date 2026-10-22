@@ -29,7 +29,7 @@
   // Scroll-reveal animations
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var revealEls = document.querySelectorAll(
-      '.card, .area-card, .solution-item, .article-card, .benefit-panel, .facts-box, .media-card, .inline-cta, .heritage-figure, .heritage-row, .faq-grid details, .trust-item'
+      '.card, .area-card, .solution-item, .article-card, .benefit-panel, .facts-box, .media-card, .inline-cta, .faq-grid details, .trust-item'
     );
     revealEls.forEach(function (el) {
       el.classList.add('reveal');
