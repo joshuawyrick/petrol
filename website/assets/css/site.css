@@ -48,6 +48,11 @@ button, input, textarea, select { font: inherit; }
   background: rgba(255,255,255,.98);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.site-header.header-scrolled {
+  box-shadow: 0 4px 24px rgba(0,19,64,.08);
+  border-color: transparent;
 }
 .nav-shell {
   max-width: 1380px;
@@ -108,8 +113,17 @@ button, input, textarea, select { font: inherit; }
   transition: .2s ease;
   cursor: pointer;
 }
-.btn-primary { background: var(--red); color: white; }
+.btn-primary { background: var(--red); color: white; position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  transition: left .5s ease;
+}
 .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+.btn-primary:hover::after { left: 100%; }
 .btn-outline { background: transparent; border-color: rgba(255,255,255,.62); color: white; }
 .btn-outline:hover { background: rgba(255,255,255,.10); }
 .btn-outline-dark { background: white; border-color: var(--navy); color: var(--navy); }
@@ -133,6 +147,14 @@ button, input, textarea, select { font: inherit; }
   overflow: hidden;
   background: var(--navy-deep);
   color: white;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60%; height: 100%;
+  background: radial-gradient(ellipse at 80% 30%, rgba(13,42,74,.6) 0%, transparent 60%);
+  pointer-events: none;
 }
 .hero-grid {
   max-width: 1440px;
@@ -259,8 +281,36 @@ button, input, textarea, select { font: inherit; }
 .home-solutions .container > h2 { text-transform: uppercase; }
 .home-faq { background: var(--light); }
 .faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
-.faq-grid details { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: 0 10px 30px rgba(0,19,64,.05); }
-.faq-grid summary { color: var(--navy); cursor: pointer; font-size: 17px; font-weight: 800; line-height: 1.35; }
+.faq-grid details {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: 0 10px 30px rgba(0,19,64,.05);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.faq-grid details[open] { border-color: #cbd9e1; box-shadow: 0 14px 40px rgba(0,19,64,.08); }
+.faq-grid summary {
+  color: var(--navy);
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.35;
+  list-style: none;
+  position: relative;
+  padding-right: 32px;
+}
+.faq-grid summary::-webkit-details-marker { display: none; }
+.faq-grid summary::after {
+  content: '+';
+  position: absolute;
+  right: 0; top: -2px;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--red);
+  transition: transform .25s ease;
+}
+.faq-grid details[open] summary::after { content: '\2212'; transform: rotate(180deg); }
 .faq-grid details p { margin: 16px 0 0; color: var(--steel); font-size: 15px; }
 .faq-grid details a { color: var(--red); font-weight: 800; }
 .lead-copy { font-size: 18px; line-height: 1.75; }
@@ -279,11 +329,14 @@ button, input, textarea, select { font: inherit; }
   border-radius: var(--radius);
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0,19,64,.05);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
+.card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,19,64,.10); border-color: #cbd9e1; }
 .card p { margin-bottom: 0; }
 .card-link { color: var(--red); font-weight: 800; text-decoration: none; font-size: 13px; text-transform: uppercase; }
 .card-link:hover { text-decoration: underline; }
-.icon-mark { width: 12px; height: 12px; border-radius: 50%; background: var(--red); margin-bottom: 18px; }
+.icon-mark { width: 12px; height: 12px; border-radius: 50%; background: var(--red); margin-bottom: 18px; transition: transform .3s ease, box-shadow .3s ease; }
+.card:hover .icon-mark { transform: scale(1.4); box-shadow: 0 0 0 6px rgba(213,0,50,.12); }
 
 .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
 .area-card {
@@ -295,6 +348,17 @@ button, input, textarea, select { font: inherit; }
   transition: .2s ease;
 }
 .area-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #cbd9e1; }
+.area-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--red);
+  border-radius: 0 0 14px 14px;
+  transition: width .3s ease;
+}
+.area-card { position: relative; overflow: hidden; }
+.area-card:hover::before { width: 100%; }
 .area-card strong { display: block; color: var(--navy); font-size: 19px; }
 .area-card span { display: block; margin-top: 6px; color: var(--red); font-size: 12px; font-weight: 800; text-transform: uppercase; }
 
@@ -303,6 +367,14 @@ button, input, textarea, select { font: inherit; }
   color: white;
   position: relative;
   overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%; height: 100%;
+  background: radial-gradient(ellipse at 70% 40%, rgba(13,42,74,.5) 0%, transparent 65%);
+  pointer-events: none;
 }
 .page-hero-inner {
   max-width: var(--max);
@@ -353,7 +425,18 @@ button, input, textarea, select { font: inherit; }
 
 .faq { margin-top: 38px; border-top: 1px solid var(--line); }
 .faq details { border-bottom: 1px solid var(--line); padding: 19px 0; }
-.faq summary { cursor: pointer; color: var(--navy); font-weight: 800; font-size: 17px; }
+.faq summary { cursor: pointer; color: var(--navy); font-weight: 800; font-size: 17px; list-style: none; position: relative; padding-right: 28px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  position: absolute;
+  right: 0; top: -2px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--red);
+  transition: transform .25s ease;
+}
+.faq details[open] summary::after { content: '\2212'; transform: rotate(180deg); }
 .faq details p { margin-bottom: 0; }
 
 .callout {
@@ -606,4 +689,24 @@ textarea { min-height: 150px; resize: vertical; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* Scroll-reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Focus-visible outlines */
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(213,0,50,.4);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
